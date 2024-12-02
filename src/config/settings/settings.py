@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "users",
 ]
 
 MIDDLEWARE = [
@@ -103,3 +104,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 TELEGRAM_BOT_ID = os.getenv("TELEGRAM_BOT_ID")
+DOMAIN = os.getenv("DOMAIN")
+BOT_NAME = os.getenv("BOT_NAME")
