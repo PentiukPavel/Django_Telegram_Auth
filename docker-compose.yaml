@@ -30,10 +30,10 @@ services:
     depends_on:
       - db
     ports:
-      - "80:80"
+      - "8000:8000"
     env_file:
       - ./.env
 
 volumes:
-  sunny_static_value:
+  dta_static_value:
   dta_data:
