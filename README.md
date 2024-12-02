@@ -1,7 +1,7 @@
 # Django Telegram Authentification
 
-## Описание
-Web приложение на Django с аутентификацией через Telegram
+## Описание:
+Web приложение на Django с аутентификацией через Telegram.
 
 ## Для разработчиков:
 
@@ -21,7 +21,7 @@ pre-commit run --all-files
 
 ## Как запустить проект:
 
-1) Клонировать проект
+1) Клонировать проект.
 ```
 git clone https://github.com:PentiukPavel/Django_Telegram_Auth.git
 ```
@@ -58,7 +58,7 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Системные требования
+## Системные требования:
 ### Python==3.12
 
 ## Стек
