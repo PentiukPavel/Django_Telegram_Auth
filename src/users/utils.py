@@ -7,7 +7,9 @@ from django.conf import settings
 class HashCheck:
     def __init__(self, data):
         self.hash = data["hash"]
-        self.secret_key = hashlib.sha256(settings.TELEGRAM_BOT_ID).digest()
+        self.secret_key = hashlib.sha256(
+            settings.TELEGRAM_BOT_ID.encode("utf-8")
+        ).digest()
         self.data = {}
         for k, v in data.items():
             if k != "hash":
