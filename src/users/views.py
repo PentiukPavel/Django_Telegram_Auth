@@ -15,6 +15,10 @@ def welcome(request):
 
 
 def registry(request):
+    if not request.GET.get("hash", None):
+        error = "Пройдите регистрацию"
+        return render(request, "error.html", {"error": error})
+
     if not HashCheck(request.GET).check_hash():
         error = "Данные не прошли проверку!"
         return render(request, "error.html", {"error": error})
