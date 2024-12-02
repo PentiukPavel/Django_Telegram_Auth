@@ -10,4 +10,4 @@ RUN pip3 install -U pip && \
 
 COPY ./src /app
 
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0:80" ]
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0:8000" ]
