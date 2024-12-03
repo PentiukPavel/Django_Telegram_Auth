@@ -22,11 +22,11 @@ jobs:
           envkey_TELEGRAM_BOT_ID: ${{ secrets.TELEGRAM_BOT_ID }}
           envkey_DOMAIN: ${{ secrets.DOMAIN }}
           envkey_ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
-          envkey_DB_NAME: ${{ secrets.POSTGRES_DB }}
+          envkey_POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
           envkey_POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
           envkey_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
-          envkey_DB_PORT: ${{ secrets.POSTGRES_PORT }}
-          envkey_DB_HOST: ${{ secrets.POSTGRES_SERVER }}
+          envkey_POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
+          envkey_POSTGRES_SERVER: ${{ secrets.POSTGRES_SERVER }}
           envkey_DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
 
       - name: Set up Docker Buildx
