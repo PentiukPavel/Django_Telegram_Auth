@@ -8,7 +8,12 @@ services:
     volumes:
       - dta_data:/var/lib/postgresql/data/
     env_file:
-      - ./.env
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${DB_NAME} -U $${POSTGRES_USER}" ]
+      interval: 1s
+      timeout: 5s
+      retries: 10
 
   nginx:
     image: nginx:1.21.3-alpine
@@ -52,7 +57,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - ./.env
+      - .env
 
 volumes:
   dta_static_value:
