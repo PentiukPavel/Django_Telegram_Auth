@@ -13,7 +13,7 @@ class CustomUser(models.Model):
 
     @staticmethod
     def get_or_create_user(data: dict):
-        user = CustomUser.objects.get_or_create(
+        user, _ = CustomUser.objects.get_or_create(
             telegram_id=data.get("id"),
             first_name=data.get("first_name", None),
             last_name=data.get("last_name", None),
