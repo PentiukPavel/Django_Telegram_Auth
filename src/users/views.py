@@ -26,7 +26,10 @@ def registry(request):
     user = CustomUser.get_or_create_user(request.GET)
     user.save()
     request.session["user_id"] = user.id
-    return redirect(reverse("users:user_info"))
+    return render(
+        request, "error.html",
+        {"error": f"{request.session["user_id"]} {user.id}"}
+    )
 
 
 def user_info(request):
