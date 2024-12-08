@@ -33,10 +33,13 @@ def user_info(request):
     user_id = request.session.get("user_id", None)
     if not user_id:
         render(
-            request,
-            "error.html",
-            {"error": f"{request.session["user_id"]}"}
+            request, "error.html", {"error": f"{request.session["user_id"]}"}
         )
     user: CustomUser = CustomUser.objects.get(user_id)
     context = {"first_name": user.first_name, "last_name": user.last_name}
     return render(request, "user_info.html", context)
+
+
+def logout(request):
+    del request.session["user_id"]
+    return redirect(reverse("users:welcome"))
