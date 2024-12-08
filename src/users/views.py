@@ -33,7 +33,7 @@ def user_info(request):
     user_id = request.session.get("user_id", None)
     if not user_id:
         render(
-            request, "error.html", {"error": f"{request.session["user_id"]}"}
+            request, "error.html", {"error": "Необходима регистрация"}
         )
     user: CustomUser = CustomUser.objects.get(user_id)
     context = {"first_name": user.first_name, "last_name": user.last_name}
