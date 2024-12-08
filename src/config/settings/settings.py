@@ -11,7 +11,7 @@ load_dotenv(dotenv_path)
 
 SECRET_KEY = os.getenv("SECRET_KEY", default="secret_key")
 
-DEBUG = False
+DEBUG = True
 
 if "test" in sys.argv:
     ALLOWED_HOSTS = ["testserver"]
