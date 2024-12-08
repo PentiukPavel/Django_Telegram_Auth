@@ -2,7 +2,6 @@
 
 ## Описание:
 Web приложение на Django с аутентификацией через Telegram.
-На данный ммент приложение доступно на https://djangotelegramauth.zapto.org/welcome/
 
 ## Для разработчиков:
 
