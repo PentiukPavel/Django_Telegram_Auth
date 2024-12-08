@@ -30,16 +30,14 @@ def registry(request):
 
 
 def user_info(request):
-    user_id = int(request.session.get("user_id", None))
+    user_id = request.session.get("user_id", None)
     if user_id is None:
-        render(
-            request, "error.html", {"error": "Необходима регистрация"}
-        )
-    user: CustomUser = CustomUser.objects.get(user_id)
+        return redirect("users:welcome")
+    user: CustomUser = CustomUser.objects.get(int(user_id))
     context = {"first_name": user.first_name, "last_name": user.last_name}
     return render(request, "user_info.html", context)
 
 
 def logout(request):
     del request.session["user_id"]
-    return redirect(reverse("users:welcome"))
+    return redirect(reverse("users:me"))
