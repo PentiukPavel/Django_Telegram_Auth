@@ -6,4 +6,6 @@
 {% block content %}
   <p>Добрый день, {{ first_name }} {{ last_name }}!</p>
 
+
+  <p><a href={% url 'users:logout' %}">Выйти</p>
 {% endblock %}
