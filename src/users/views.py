@@ -30,8 +30,8 @@ def registry(request):
 
 
 def user_info(request):
-    user_id = request.session.get("user_id", None)
-    if not user_id:
+    user_id = int(request.session.get("user_id", None))
+    if user_id is None:
         render(
             request, "error.html", {"error": "Необходима регистрация"}
         )
